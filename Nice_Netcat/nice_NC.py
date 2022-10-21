@@ -1,9 +1,8 @@
-result = []
+flag = []
 with open('flag.txt','r') as f:
-    b = bytes.fromhex(f.read()).decode('utf-8')
-    a = list(b.split(" \n"))
-    a.pop()
-    for i in a:
-        c = chr(int(i))
-        result.append(c)
-print(''.join(result))
+    text = f.read()
+    result = list(text.split(" \n"))
+    for key in result:
+        flag.append(chr(int(key)))
+flag.pop()
+print(''.join(flag))
